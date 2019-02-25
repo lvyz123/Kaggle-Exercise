@@ -1,3 +1,4 @@
+# Exercise 1
 pd.set_option('max_columns', None)
 pokemon = pd.read_csv("../input/pokemon/pokemon.csv")
 pokemon.head(3)
@@ -8,6 +9,7 @@ pokemon['hp'].value_counts().sort_index().plot.line()
 
 pokemon['weight_kg'].plot.hist()
 
+# Exercise 2
 pokemon = pd.read_csv("../input/pokemon/Pokemon.csv", index_col=0)
 pokemon.head()
 
@@ -23,6 +25,7 @@ pokemon_stats_by_generation = pokemon.groupby('Generation').mean()[['HP', 'Attac
 
 pokemon_stats_by_generation.plot.line()
 
+# Exercise 3
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -49,6 +52,7 @@ ax = pokemon['Type 1'].value_counts().plot.bar(
 ax.set_title("Pokemon by Primary Type", fontsize=20)
 sns.despine(bottom=True, left=True)
 
+# Exercise 4
 import pandas as pd
 import matplotlib.pyplot as plt
 pokemon = pd.read_csv("../input/pokemon/Pokemon.csv")
@@ -60,6 +64,7 @@ fig, axarr = plt.subplots(2, 1, figsize=(8, 8))
 pokemon['Attack'].plot.hist(ax=axarr[0], title='Pokemon Attack Ratings')
 pokemon['Defense'].plot.hist(ax=axarr[1], title='Pokemon Defense Ratings')
 
+# Exercise 5
 pokemon = pd.read_csv("../input/pokemon/Pokemon.csv", index_col=0)
 pokemon.head()
 
@@ -77,6 +82,7 @@ sns.boxplot(x='Legendary', y='Attack', data=pokemon)
 
 sns.violinplot(x='Legendary', y='Attack', data=pokemon)
 
+# Exercise 6
 import pandas as pd
 import seaborn as sns
 
@@ -91,6 +97,7 @@ g.map(sns.kdeplot, "Attack")
 
 sns.pairplot(pokemon[['HP', 'Attack', 'Defense']])
 
+# Exercise 7
 pokemon = pd.read_csv("../input/pokemon/Pokemon.csv", index_col=0)
 pokemon.head()
 
